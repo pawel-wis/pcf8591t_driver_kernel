@@ -4,6 +4,7 @@
 #include <linux/i2c.h>
 #include <stddef.h>
 
+#define MODULE_NAME "BMP280_DRIVER"
 #define SLAVE_DEVICE_NAME    ( "BMP_280" )
 #define SLAVE_ADDR           0x76
 #define I2C_BUS_NUM          1
@@ -24,15 +25,16 @@ static struct i2c_board_info raspi_i2c_board_info = {
 	I2C_BOARD_INFO(SLAVE_DEVICE_NAME, SLAVE_ADDR)
 };
 
-static int __init bmp280_driver_init(void) {
-	printk(KERN_INFO "BMP280 Driver Initialization Done");
+//module init fun
+static int bmp280_driver_init(void) {
+	printk("[%s] Init: Driver init\n", MODULE_NAME);
 	return 0;
 }
 
-static void __exit bmp280_driver_exit(void) {
-	printk(KERN_INFO "BMP280 Driver exit.");
+//module exit fun
+static void bmp280_driver_exit(void) {
+	printk("[%s] Exit\n", MODULE_NAME);
 }
 
 module_init(bmp280_driver_init);
 module_exit(bmp280_driver_exit);
-
