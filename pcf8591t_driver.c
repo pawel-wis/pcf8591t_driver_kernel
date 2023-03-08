@@ -1,3 +1,7 @@
+/*
+* Copyright (C) 2023, Pawel Wisniewski
+*/
+
 #include <asm/uaccess.h>
 #include <linux/fs.h>
 #include <linux/i2c.h>
