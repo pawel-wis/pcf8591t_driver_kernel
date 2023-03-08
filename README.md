@@ -4,6 +4,8 @@ Module registers a character device. You can make node under /dev directory to c
 
 This is 8 bits conventer so returning type is unsigned char (C).
 
+Default major number for a chdev is 240.
+
 ## Compilation
 ```
 make
